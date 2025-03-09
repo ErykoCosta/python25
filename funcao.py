@@ -22,13 +22,17 @@ resultado = par_impar(numero)
 print(f'O número {numero} é {resultado}.')
 
 # %%
-def soma(a: float, b: float) -> float:
-    return a + b
+def soma(a: float, b: float, *args) -> float:
+    valores = [a, b] + list(args)
+    return sum(valores)
 
-def media(a: float, b: float) -> float:
-    return soma(a, b) / 2
+def media(a: float, b: float, *args) -> float:
+    return soma(a, b, *args) / (len(args)+2)
 
 a = float(input('Digite o primeiro número: '))
-b = float(input('Digite o segundo número: '))   
+b = float(input('Digite o segundo número: '))
+c = float(input('Digite o terceiro número: '))
+d = float(input('Digite o quarto número: '))
 
-print(f'A média de {a} e {b} é = {media(a, b)}.')
+print(f'A média dos números é = {media(a, b, c, d)}.')   
+
