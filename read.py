@@ -24,3 +24,5 @@ with open(arquivo1, 'r') as arq:
     leitor = csv.reader(arq)
     for linha in leitor:
         print(linha)
+
+# %%
